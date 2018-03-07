@@ -39,8 +39,9 @@ def has_ship():
     яка на основі зчитаних даних та координат клітинки (наприклад, (J, 1) або (A,
     10)) визначає чи є у даній клітинці корабель.
     '''
+    path = "field.txt"
     alp = [i for i in string.ascii_lowercase]
-    field = read_field()
+    field = read_field(path)
     lst = []
     for line in field:
         for cells in line:
@@ -79,7 +80,8 @@ def is_valid():
     яка перевіряє чи поле зчитане з файлу може бути ігровим полем, на якому
     розмішені усі кораблі
     """
-    lst=read_field()
+    path = "field.txt"
+    lst=read_field(path)
     if len(lst[0])==10 and len(lst)==10:
         return True
     else:
